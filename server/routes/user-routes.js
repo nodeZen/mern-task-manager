@@ -45,7 +45,6 @@ userRouter.delete("/task", async (req, res) => {
 userRouter.patch("/task", async (req, res) => {
   const { body } = req;
   const { _id: id } = body;
-  console.log({ id, body });
   try {
     const result = await TaskModel.findByIdAndUpdate(id, body, { new: true });
     res.send(result);
